@@ -1,21 +1,24 @@
 # APPWeb-PracticePack
 
-# CourierStoreMVC - ASP.NET Core MVC Frontend
+*Aclaracción*: Este es solo un TEMPLATE, no he subido el codigo por que aun no lo termino. Lo estare subiendo durante el transcurso del día de hoy.
+Perdonar los inconvenientes.
 
-CourierStoreMVC is a web-based frontend interface built with **ASP.NET Core MVC**, designed to interact with the **CourierStore serverless API** (hosted on AWS Lambda). It consumes backend services via **HTTP calls** and is hosted in **Amazon ECS using Fargate** for scalable, containerized deployment.
+# PracticePackMVC - ASP.NET Core MVC Frontend
+
+PracticePackMVC is a web-based frontend interface built with **ASP.NET Core MVC**, designed to interact with the **PracticePack serverless API** (hosted on AWS Lambda). It consumes backend services via **HTTP calls** and is hosted in **Amazon ECS using Fargate** for scalable, containerized deployment.
 
 ---
 
 ## 📚 Overview
 
-This project is responsible for the user-facing interface of the CourierStore ecosystem. It provides:
+This project is responsible for the user-facing interface of the PracticePack ecosystem. It provides:
 
 - User registration & login
 - Product browsing & details
 - Cart and checkout flows
 - Order tracking and payment status
 
-It works as a client for the **CourierStore AWS Lambda API**.
+It works as a client for the **PracticePack AWS Lambda API**.
 
 ---
 
@@ -25,7 +28,7 @@ It works as a client for the **CourierStore AWS Lambda API**.
 Browser
    |
    v
-ASP.NET Core MVC (CourierStoreMVC)
+ASP.NET Core MVC (PracticePackMVC)
    |
    |--- Controllers / Views / Models
    |
@@ -34,7 +37,7 @@ ASP.NET Core MVC (CourierStoreMVC)
 AWS API Gateway (connected to Lambda endpoints)
    |
    v
-Lambda Functions (CourierStore API)
+Lambda Functions (PracticePack API)
    |
    v
 Amazon RDS (SQL Server)
@@ -81,7 +84,7 @@ Payment: Id, OrderId, Status, Method
 ## 📂 Project Structure
 
 ```plaintext
-/CourierStoreMVC
+/PracticePackMVC
   /Controllers
     - AccountController.cs
     - ProductController.cs
@@ -122,14 +125,14 @@ Set Lambda API URLs in `appsettings.json`:
 
 ### Docker Image:
 ```bash
-docker build -t courierstoremvc .
+docker build -t PracticePackmvc .
 ```
 
 ### Push to ECR:
 ```bash
-aws ecr create-repository --repository-name courierstoremvc
+aws ecr create-repository --repository-name PracticePackmvc
 aws ecr get-login-password | docker login --username AWS --password-stdin <ecr-repo-url>
-docker tag courierstoremvc <ecr-repo-url>:latest
+docker tag PracticePackmvc <ecr-repo-url>:latest
 docker push <ecr-repo-url>:latest
 ```
 
@@ -142,7 +145,7 @@ docker push <ecr-repo-url>:latest
 
 ## 🚒 API Consumption
 
-All data is retrieved through secure calls to the CourierStore Lambda API.
+All data is retrieved through secure calls to the PracticePack Lambda API.
 - JWT tokens are stored in cookies/session
 - Sent via `Authorization: Bearer <token>` header
 - JSON payloads are mapped from ViewModels → DTOs → API
@@ -158,5 +161,5 @@ All data is retrieved through secure calls to the CourierStore Lambda API.
 
 ---
 
-> This project completes the full stack delivery system of CourierStore, integrating Lambda backend with a robust MVC frontend ✨
+> This project completes the full stack delivery system of PracticePack, integrating Lambda backend with a robust MVC frontend ✨
 
