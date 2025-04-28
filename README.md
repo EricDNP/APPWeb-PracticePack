@@ -1,9 +1,8 @@
 # APPWeb-PracticePack
 
-*Aclaracción*: Este es solo un TEMPLATE, no he subido el codigo por que aun no lo termino. Lo estare subiendo durante el transcurso del día de hoy.
-Perdonar los inconvenientes.
+PracticePackMVC - ASP.NET Core MVC Frontend
 
-# PracticePackMVC - ASP.NET Core MVC Frontend
+## Project Overview
 
 PracticePackMVC is a web-based frontend interface built with **ASP.NET Core MVC**, designed to interact with the **PracticePack serverless API** (hosted on AWS Lambda). It consumes backend services via **HTTP calls** and is hosted in **Amazon ECS using Fargate** for scalable, containerized deployment.
 
