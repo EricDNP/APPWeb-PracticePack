@@ -1,8 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@section HeadContent {
+    <link rel="stylesheet" href="~/css/home-style.css" />
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@{
+    ViewData["Title"] = "Home Page";
+    string userName = User.Identity.Name;
+}
+
+<div class="home-content">
+    <h1>Bienvenido @userName</h1>
+    <div class="user-operations">
+        <div id="personal-operation" class="operation">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="./img/personal-data.jpg">
+                <p>Personal Data</p>
+            </a>
+        </div>
+        <div id="payment-operation" class="operation">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="./img/payment.jpg">
+                <p>Payment Method</p>
+            </a>
+        </div>
+        <div id="package-operation" class="operation">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="./img/location.jpg">
+                <p>Locations</p>
+            </a>
+        </div>
+        <div id="package-operation" class="operation">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="./img/packages.jpg">
+                <p>Ordered Packages</p>
+            </a>
+        </div>
+    </div>
 </div>

@@ -1,9 +1,11 @@
 using System.Diagnostics;
-using APPWEB_PracticePack.Models;
 using Microsoft.AspNetCore.Mvc;
+using APPWEB_PracticePack.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace APPWEB_PracticePack.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

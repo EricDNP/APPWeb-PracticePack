@@ -1,7 +1,10 @@
+using APPWEB_PracticePack.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDependencyInjection(builder.Configuration);
 
 var app = builder.Build();
 
